@@ -16,7 +16,7 @@ In a nutshell this means that for any two given data sets of points X and Y we a
 
 In this case we are investigating F(x) that looks something like this:
 	
-![Function](images/function.png)
+<img src="images/function.png" height="20" />
 
 i.e. we are trying to find a set of coefficients C such that F(x) is as close to y as possible.
 
@@ -24,11 +24,11 @@ i.e. we are trying to find a set of coefficients C such that F(x) is as close to
 
 We measure how well F(x) describes y using the cost function:
 
-![Cost](images/cost1.png)
+<img src="images/cost1.png" height="20" />
 
 where x^(i) is the i-th set of inputs (or features), y^(i) is the output for x^(i) and m is the number of training examples. We can write this in vector form as:
 
-![Cost](images/cost2.png)
+<img src="images/cost2.png" height="20" />
 
 where C is a vector representing all coefficients, X is the matrix where every row is a vector x^(i) where i is between 1 and m and y is a vector representing all outputs.
 
@@ -36,11 +36,11 @@ where C is a vector representing all coefficients, X is the matrix where every r
 
 In order to find the coefficients C that minimise our cost function J(C) we use the following algorithm:
 
-![Cost](images/grad1.png)
+<img src="images/grad1.png" height="20" />
 
 which can be represented using the vector form:
 
-![Cost](images/grad2.png)
+<img src="images/grad2.png" height="20" />
 
 The idea behind this is that C_i will converge to some vector V which will be the best set of coefficients for our relation F to predict y.
 
