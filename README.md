@@ -6,7 +6,7 @@ Machine learning is quite fascinating subfield of computer science so I decided 
 
 Who knows, maybe one day this will become an open source machine learning library... It may not be the [TensorFlow](https://www.tensorflow.org/) but this code should give you a basic understanding of the fundamentals. I will try to comment the code the best I can and give some basic theory behind the concepts in this README file.
 
-Readers should be familiar with linear algebra and calculus.
+<b>NOTE:</b> Readers should be familiar with linear algebra and calculus.
 
 ## Multivariable Linear Regression
 
@@ -14,6 +14,42 @@ In statistics, [linear regression](https://en.wikipedia.org/wiki/Linear_regressi
 
 In a nutshell this means that for any two given data sets of points X and Y we are trying to find a relationship F such that F(x) = y where x represents the input state and y represents the output for the corresponding input state x.
 
-We measure how well F(x) describes y using the cost function.
+In this case we are investigating F(x) that looks something like this:
+	
+![Function](images/function.png)
 
-## Cost Function
+i.e. we are trying to find a set of coefficients C such that F(x) is as close to y as possible.
+
+### Cost Function
+
+We measure how well F(x) describes y using the cost function:
+
+![Cost](images/cost1.png)
+
+where x^(i) is the i-th set of inputs (or features), y^(i) is the output for x^(i) and m is the number of training examples. We can write this in vector form as:
+
+![Cost](images/cost2.png)
+
+where C is a vector representing all coefficients, X is the matrix where every row is a vector x^(i) where i is between 1 and m and y is a vector representing all outputs.
+
+### Gradient Descent
+
+In order to find the coefficients C that minimise our cost function J(C) we use the following algorithm:
+
+![Cost](images/grad1.png)
+
+which can be represented using the vector form:
+
+![Cost](images/grad2.png)
+
+The idea behind this is that C_i will converge to some vector V which will be the best set of coefficients for our relation F to predict y.
+
+### References
+
+* Coursera [machine learning](https://www.coursera.org/learn/machine-learning) course
+* [Deep Learning](http://www.deeplearningbook.org/) book by Ian Goodfellow Yoshua Bengio and Aaron Courville
+
+
+ 
+
+
