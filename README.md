@@ -28,7 +28,7 @@ We measure how well F(x) describes y using the cost function:
 
 where x^(i) is the i-th set of inputs (or features), y^(i) is the output for x^(i) and m is the number of training examples. We can write this in vector form as:
 
-<img src="images/cost2.png" height="35" />
+<img src="images/cost2.png" height="40" />
 
 where C is a vector representing all coefficients, X is the matrix where every row is a vector x^(i) where i is between 1 and m and y is a vector representing all outputs.
 
@@ -36,13 +36,13 @@ where C is a vector representing all coefficients, X is the matrix where every r
 
 In order to find the coefficients C that minimise our cost function J(C) we use the following algorithm:
 
-<img src="images/grad1.png" height="35" />
+<img src="images/grad1.png" height="40" />
 
-which can be represented using the vector form:
+where alpha is the learning rate. When we substitute our cost function we get:
 
 <img src="images/grad2.png" height="35" />
 
-The idea behind this is that C_i will converge to some vector V which will be the best set of coefficients for our relation F to predict y.
+The idea behind this is that C_i will converge to some vector V which will be the best set of coefficients for our relation F to predict y. We can choose alpha to be a scalar or a diagonal matrix if we want to adjust the learning rate differently for different coefficients.
 
 ### References
 
