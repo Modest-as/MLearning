@@ -2,7 +2,7 @@
 
 ## Description
 
-Machine learning is quite fascinating subfield of computer science so I decided to learn more about it. This repository contains some of the code that I have written in order to introduce myself to various concepts of machine learning. 
+Machine learning is quite a fascinating subfield of computer science so I decided to learn more about it. This repository contains some of the code that I have written in order to introduce myself to various concepts of machine learning. 
 
 Who knows, maybe one day this will become an open source machine learning library... It may not be the [TensorFlow](https://www.tensorflow.org/) but this code should give you a basic understanding of the fundamentals. I will try to comment the code the best I can and give some basic theory behind the concepts in this README file.
 
@@ -42,7 +42,7 @@ where alpha is the learning rate. When we substitute our cost function we get:
 
 <img src="images/grad2.png" height="35" />
 
-The idea behind this is that C_i will converge to some vector V which will be the best set of coefficients for our relation F to predict y. We can choose alpha to be a scalar or a diagonal matrix if we want to adjust the learning rate differently for different coefficients.
+The idea behind this is that C_i will converge to some vector V which will be the best set of coefficients for our relation F to predict y. We can choose alpha to be a scalar or a diagonal matrix if we want to adjust the learning rate differently for individual coefficients.
 
 ### References
 
