@@ -64,7 +64,7 @@ This cost function is chosen because it approaches infinity if F(x) = 1 while y 
 
 ### Gradient Descent
 
-Using the cost function above our algorithm to find coefficients looks like this:
+Using the cost function above our algorithm to find the coefficients looks like this:
 
 <img src="images/grad3.png" height="35" />
 
