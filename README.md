@@ -60,7 +60,7 @@ Cost function is:
 
 ![J(C) = \frac{1}{m}(-\vec{y}^T \cdot \log{(g(X\cdot C))} - (1 - \vec{y})^T \cdot \log{(1 - g(X\cdot C))})](http://mathurl.com/jt9yln5.png)
 
-This cost function is chosen because it approaches infinity if ![g(X\cdot C) = 1](http://mathurl.com/zgaeq9e.png) while ![y = 0](http://mathurl.com/3snovbu) and vice versa. Also, the gradient of this function looks much like the gradient of the cost function for the linear regression.
+This cost function is chosen because it approaches infinity if ![g(X\cdot C) = 1](http://mathurl.com/zgaeq9e.png) while ![y = 0](http://mathurl.com/3snovbu.png) and vice versa. Also, the gradient of this function looks much like the gradient of the cost function for the linear regression.
 
 ### Gradient Descent
 
