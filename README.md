@@ -10,63 +10,63 @@ Who knows, maybe one day this will become an open source machine learning librar
 
 ## Multivariable Linear Regression
 
-In statistics, [linear regression](https://en.wikipedia.org/wiki/Linear_regression) is an approach for modeling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X.
+In statistics, [linear regression](https://en.wikipedia.org/wiki/Linear_regression) is an approach for modeling the relationship between a scalar dependent variable ![y](http://mathurl.com/37tklth.png) and one or more explanatory variables (or independent variables) denoted ![x](http://mathurl.com/hx3x3kw.png)).
 
-In a nutshell this means that for any two given data sets of points X and Y we are trying to find a relationship F such that F(x) = y where x represents the input state and y represents the output for the corresponding input state x.
+In a nutshell this means that for any two given data sets of points ![X](http://mathurl.com/3x83h99.png) such that ![x in X](http://mathurl.com/hpkjhsd.png) and ![Y](http://mathurl.com/zjl2ean.png) such that ![y in Y](http://mathurl.com/q38yrve.png) we are trying to find a relationship ![F](http://mathurl.com/hjhy9dv.png) such that ![F(x) = y](http://mathurl.com/jky8dxe.png) where ![x](http://mathurl.com/hx3x3kw.png) represents the input state and ![y](http://mathurl.com/37tklth.png) represents the output for the corresponding input state ![x](http://mathurl.com/hx3x3kw.png).
 
-In this case we are investigating F(x) that looks something like this:
-	
-<img src="images/function.png" height="20" />
+In this case we are investigating ![F(x)](http://mathurl.com/h3pj3jl.png) that looks something like this:
 
-i.e. we are trying to find a set of coefficients C such that F(x) is as close to y as possible.
+![Linear function](http://mathurl.com/hwbtzt3.png)
+
+i.e. we are trying to find a set of coefficients ![C](http://mathurl.com/gu7gmsk.png) such that ![F(x)](http://mathurl.com/h3pj3jl.png) is as close to ![y](http://mathurl.com/37tklth.png) as possible. Note that ![x_0 = 1](http://mathurl.com/z854a4q.png) and is called the bias term.
 
 ### Cost Function
 
-We measure how well F(x) describes y using the cost function:
+We measure how well ![F(x)](http://mathurl.com/h3pj3jl.png) describes ![y](http://mathurl.com/37tklth.png) using the cost function:
 
-<img src="images/cost1.png" height="35" />
+![Cost function](http://mathurl.com/htwqpzo.png)
 
-where x^(i) is the i-th set of inputs (or features), y^(i) is the output for x^(i) and m is the number of training examples. We can write this in vector form as:
+where ![x^(i)](http://mathurl.com/zrodoyx.png) is the i-th set of inputs (or features), ![y^(i)](http://mathurl.com/jcxnlez.png) is the output for ![x^(i)](http://mathurl.com/zrodoyx.png) and m is the number of training examples. We can write this in a vector form as:
 
-<img src="images/cost2.png" height="40" />
+![Cost in vector form](http://mathurl.com/z2kr4co.png)
 
-where C is a vector representing all coefficients, X is the matrix where every row is a vector x^(i) where i is between 1 and m and y is a vector representing all outputs.
+where ![C](http://mathurl.com/gu7gmsk.png) is a vector representing all coefficients, ![X](http://mathurl.com/3x83h99.png) is the matrix where every row is a vector ![x^(i)](http://mathurl.com/zrodoyx.png) where i is between 1 and m, and ![y](http://mathurl.com/jou3wvx.png) is a vector representing all outputs ![y^(i)](http://mathurl.com/jcxnlez.png).
 
 ### Gradient Descent
 
-In order to find the coefficients C that minimise our cost function J(C) we use the following algorithm:
+In order to find the coefficients ![C](http://mathurl.com/gu7gmsk.png) that minimise our cost function ![J(C)](http://mathurl.com/jqgc83n.png) we use the following algorithm:
 
-<img src="images/grad1.png" height="40" />
+![Gradient descent 1](http://mathurl.com/jzvj7rz.png)
 
 where alpha is the learning rate. When we substitute our cost function we get:
 
-<img src="images/grad2.png" height="35" />
+![Gradient descent 2](http://mathurl.com/zbx3d6o.png)
 
-The idea behind this is that C_i will converge to some vector V which will be the best set of coefficients for our relation F to predict y. We can choose alpha to be a scalar or a diagonal matrix if we want to adjust the learning rate differently for individual coefficients.
+The idea behind this is that ![C_i](http://mathurl.com/h9pawlp.png) will converge to some vector ![V](http://mathurl.com/3y4u5qh) which will be the best set of coefficients for our relation ![F(x)](http://mathurl.com/h3pj3jl.png) to predict ![y](http://mathurl.com/37tklth.png). We can choose alpha to be a scalar or a diagonal matrix if we want to adjust the learning rate differently for individual coefficients.
 
 ## Logistic Regression
 
-Instead of our output vector Y having components that are in a continuous range of values, they will be 0 or 1.
+Instead of our output vector ![\vec{y}](http://mathurl.com/jou3wvx.png) having components that are in a continuous range of values, they will be 0 or 1.
 
 We use sigmoid function as our hypothesis representation
 
-<img src="images/function2.png" height="30" />
+![F_C(\vec{x}) = g(X \cdot C) = \frac {1}{1 - e^{-X \cdot C}}](http://mathurl.com/j34dn67.png)
 
-When F(x) >= 0.5 -> y = 1 and F(x) < 0.5 -> y = 0
+![y = \begin{cases} 1 \text{if } F_C(\vec{x}) \geq 0.5 \\ 0 \text{if }  F_C(\vec{x}) \less 0.5 \end{cases}](http://mathurl.com/hkz5czh.png)
 
 ### Cost Function for Logistic Regression
 
 Cost function is:
 
-<img src="images/cost3.png" height="40" />
+![J(C) = \frac{1}{m}(-\vec{y}^T \cdot \log{(g(X\cdot C))} - (1 - \vec{y})^T \cdot \log{(1 - g(X\cdot C))})](http://mathurl.com/jt9yln5.png)
 
-This cost function is chosen because it approaches infinity if F(x) = 1 while y = 0 and vice versa. Also, the gradient of this function looks much like the gradient of the cost function for the linear regression.
+This cost function is chosen because it approaches infinity if ![g(X\cdot C) = 1](http://mathurl.com/zgaeq9e.png) while ![y = 0](http://mathurl.com/3snovbu) and vice versa. Also, the gradient of this function looks much like the gradient of the cost function for the linear regression.
 
 ### Gradient Descent
 
 Using the cost function above our algorithm to find the coefficients looks like this:
 
-<img src="images/grad3.png" height="35" />
+![C_{i + 1} = C_i - \alpha \frac{1}{m} X^T \cdot (g(X \cdot C) - \vec{y})](http://mathurl.com/gpwemn7.png)
 
 ### References
 
