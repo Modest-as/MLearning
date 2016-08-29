@@ -44,6 +44,30 @@ where alpha is the learning rate. When we substitute our cost function we get:
 
 The idea behind this is that C_i will converge to some vector V which will be the best set of coefficients for our relation F to predict y. We can choose alpha to be a scalar or a diagonal matrix if we want to adjust the learning rate differently for individual coefficients.
 
+## Logistic Regression
+
+Instead of our output vector Y having components that are in a continuous range of values, they will be 0 or 1.
+
+We use sigmoid function as our hypothesis representation
+
+<img src="images/function2.png" height="30" />
+
+When F(x) >= 0.5 -> y = 1 and F(x) < 0.5 -> y = 0
+
+### Cost Function for Logistic Regression
+
+Cost function is:
+
+<img src="images/cost3.png" height="40" />
+
+This cost function is chosen because it approaches infinity if F(x) = 1 while y = 0 and vice versa. Also, the gradient of this function looks much like the gradient of the cost function for the linear regression.
+
+### Gradient Descent
+
+Using the cost function above our algorithm to find coefficients looks like this:
+
+<img src="images/grad3.png" height="35" />
+
 ### References
 
 * Coursera [machine learning](https://www.coursera.org/learn/machine-learning) course
