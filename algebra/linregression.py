@@ -1,5 +1,6 @@
 import numpy
 
+
 # we will note tensor X as
 # the following function calculates a cost for
 # F(C,X) = c_0 * x_0 + c_1 * x_1 + ... + c_n * x_n
@@ -20,7 +21,7 @@ def cost_function(features, coefficients, output):
     return float(diff.transpose().dot(diff) / (2.0 * output.size))
 
 
-# gradient descent is calculated using the following rule
+# get coefficient closer to the minimum
 # C := C - 1/m * a * (X ^ TRANSPOSE) * (X * C - Y)
 # C - vector of coefficients
 # X - matrix of features
